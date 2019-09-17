@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <!DOCTYPE struts PUBLIC
+                "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+                "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+<!-- 指定Struts2处于开发阶段，可以进行调试 -->
+<constant name="struts.devMode" value="true" />
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+<!-- Struts2的Action都必须配置在package里,此处使用默认package -->
+<package name="default" namespace="/" extends="struts-default">
+    <!-- 定义一个名为user的Action，实现类为com.qst.chapter03.action.LoginAction -->
+    <action name="login" class="com.qst.action.LoginAction">
+        <!-- 配置execute()方法返回值与视图资源之间的映射关系 -->
+        <result name="success">/ok.jsp</result>
+        <result name="error">/error.jsp</result>
+        <result name="input">/login.jsp</result>
+    </action>
+</package>
+
+</struts>
